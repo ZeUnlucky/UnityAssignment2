@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CollisionDetection Agent1;
     [SerializeField] CollisionDetection Agent2;
     [SerializeField] public SoundController SoundController;
+    [SerializeField] public GameManagerScriptableObject DataObject;
     void Start()
     {
         Agent1.CollisionActionEvent += ShowInfoOnCollision;
@@ -30,4 +31,6 @@ public class GameManager : MonoBehaviour
     {
         data.Collider.GetComponent<Renderer>().material = data.CollisionColor;
     }
+
+
 }
