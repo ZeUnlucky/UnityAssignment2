@@ -16,14 +16,20 @@ public class SoundController : MonoBehaviour
 
     public void PlaySound(CollisionData collisionData)
     {
-        if (_audioSource != null)
+
+        if (collisionData == null)
+        {
+            Debug.LogWarning("Collision Data missing!");
+            return;
+        }
+        if (_audioSource != null) //Checks if there is an audiosource attached to the script
         {
             _audioSource.Play();
             Debug.Log("Sound played.");
         }
         else
         {
-            Debug.LogWarning("AudioSource is not assigned.");
+            Debug.LogWarning("AudioSource is not assigned."); // if not send warning
         }
     }
 }
