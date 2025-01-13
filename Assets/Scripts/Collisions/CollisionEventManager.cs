@@ -17,14 +17,11 @@ public class CollisionEventManager : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter(Collision collision)
     {
-       
         if (collision.gameObject.CompareTag("Player"))
         {
             collisionCount++;
             
             OnCollisionEvent.Invoke(collisionCount);
-        }
-        
-        
+        }  
     }
 }
